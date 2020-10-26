@@ -1,0 +1,228 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ShowRoom.master.cs" Inherits="mobilePhoneSR.ShowRoom" ClientIDMode="Static" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Online Mobilephone Showroom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="Content/bootstrap2.min.css" rel="stylesheet" />
+    <link href="Content/application.css" rel="stylesheet" />
+    <%--<link href="Content/css/show.css" rel="stylesheet" />--%>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="Content/css/colorbox.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <%--<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>--%>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery.colorbox.js"></script>    
+    <script src="Scripts/slides.js"></script>
+    <asp:ContentPlaceHolder ID="headPlaceholder" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="wrapper">
+    <header>
+    
+    <nav class="navbar navbar-default">
+        <a class="navbar-brand" href="/default.aspx"><img src="/Images/logo_m.jpg" alt="logo" class="img-responsive" /></a>
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" 
+                    data-toggle="collapse" data-target="#mainMenu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <%--<a class="navbar-brand" href="/default.aspx"><img src="images/logo_sr.jpg" alt="logo" class="img-responsive" /></a>--%>
+            </div>
+
+            <!-- navbar body - nav content for toggling -->
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul id="navList" runat="server" class="nav navbar-nav navbar-right">
+                    <li runat="server"> 
+                        <asp:HyperLink NavigateUrl="~/default.aspx" runat="server">
+                            <span class="glyphicon glyphicon-home"></span>Home
+                        </asp:HyperLink></li>
+                    <li runat="server" class="dropdown">
+                        <asp:HyperLink runat="server" NavigateUrl="~/Products.aspx" 
+                            CssClass="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-tasks"></span>Products
+                            <span class="caret"></span>
+                        </asp:HyperLink>
+                        <ul class="dropdown-menu">
+                            <li runat="server">
+                                <asp:HyperLink NavigateUrl="~/Products.aspx" runat="server">
+                                    <span class="glyphicon glyphicon-tags"></span>All
+                                </asp:HyperLink></li>
+                            <li runat="server">
+                                <asp:HyperLink NavigateUrl="~/Products.aspx?catID=1" runat="server">
+                                    <span class="glyphicon glyphicon-phone"></span>Apple
+                                </asp:HyperLink></li>
+                            <li runat="server">
+                                <asp:HyperLink NavigateUrl="~/Products.aspx?catID=2" runat="server">
+                                    <span class="glyphicon glyphicon-phone"></span>Samsung
+                                </asp:HyperLink></li>
+                            <li runat="server">
+                                <asp:HyperLink NavigateUrl="~/Products.aspx?catID=3" runat="server">
+                                    <span class="glyphicon glyphicon-phone"></span>LG
+                                </asp:HyperLink></li>
+                            <li runat="server">
+                                <asp:HyperLink NavigateUrl="~/Products.aspx?catID=4" runat="server">
+                                    <span class="glyphicon glyphicon-phone"></span>Blackberry
+                                </asp:HyperLink></li>
+                            <li runat="server">
+                                <asp:HyperLink NavigateUrl="~/Products.aspx?catID=5" runat="server">
+                                    <span class="glyphicon glyphicon-phone"></span>Google
+                                </asp:HyperLink></li>
+                        </ul>
+                    </li>
+                    <li runat="server"> 
+                        <asp:HyperLink NavigateUrl="~/Order.aspx" runat="server">
+                            <span class="glyphicon glyphicon-usd"></span>Shopping
+                        </asp:HyperLink></li>
+                    <li runat="server">                               
+                        <asp:HyperLink NavigateUrl="~/Cart.aspx" runat="server">
+                            <span class="glyphicon glyphicon-shopping-cart"></span>Cart
+                            <span id="spanCount" runat="server" class="badge"></span>
+                        </asp:HyperLink></li>
+                    <li runat="server" class="dropdown">
+                        <asp:HyperLink NavigateUrl="#" runat="server" CssClass="dropdown-toggle" 
+                            data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-barcode"></span>Maintenance
+                            <span class="caret"></span>
+                        </asp:HyperLink>
+                        <ul class="dropdown-menu">
+                            <li runat="server">                               
+                                <asp:HyperLink NavigateUrl="~/Maintenance.aspx" runat="server">
+                                    <span class="glyphicon glyphicon-barcode"></span>Product Maintenance
+                                </asp:HyperLink></li>
+                        </ul>
+                    </li>
+                    <li runat="server" class="dropdown">
+                        <asp:HyperLink NavigateUrl="#" runat="server" CssClass="dropdown-toggle" 
+                            data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-wrench"></span>Support
+                            <span class="caret"></span>
+                        </asp:HyperLink>
+                        <ul class="dropdown-menu">
+                            <li runat="server">
+                                <asp:HyperLink NavigateUrl="~/CustomerSurvey.aspx" runat="server">
+                                    <span class="glyphicon glyphicon-pencil"></span>Survey
+                                </asp:HyperLink></li>
+                            <li runat="server">
+                                <asp:HyperLink NavigateUrl="~/Questions.aspx" runat="server">
+                                    <span class="glyphicon glyphicon-question-sign"></span>Q & A
+                                </asp:HyperLink></li>
+                        </ul>
+                    </li>
+                    <li runat="server">
+                        <asp:HyperLink NavigateUrl="~/ContactUs.aspx" runat="server">
+                            <span class="glyphicon glyphicon-phone-alt"></span>Company
+                        </asp:HyperLink></li>
+<%--                    <li runat="server">
+                        <asp:HyperLink NavigateUrl="~/ContactUs.aspx" runat="server">
+                            <span class="glyphicon glyphicon-phone-alt"></span>Company
+                        </asp:HyperLink></li>--%>
+<%--                    <li runat="server">
+                        <asp:HyperLink NavigateUrl="~/AboutUs.aspx" runat="server">
+                            <span class="glyphicon glyphicon-info-sign"></span>About
+                        </asp:HyperLink></li>--%>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <div class="container">
+        <form id="form1" runat="server" class="form-horizontal">
+            
+            <header class="jumbotron"></header>
+            <main class="row">
+                <div class="col-sm-12">
+                    <ol class="breadcrumb text-info">
+                        <asp:Literal ID="litBreadcrumb" runat="server"></asp:Literal>
+                    </ol>
+                    <h1><asp:Label ID="lblPageHeader" runat="server"></asp:Label></h1>
+                    <asp:ContentPlaceHolder ID="mainPlaceholder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </main>
+<%--            <footer class="text-center text-capitalize">
+                <label>copyright &copy; Chan Lim, all rights reserved.</label>
+            </footer>--%>
+            <%--<footer class="text-center m-3 p-3">--%>
+            <footer>
+                <%--<asp:ContentPlaceHolder ID="footerPlaceHolder" runat="server">--%>
+
+            <div id="footerwidget" class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <aside id="contact-info-widget-1" class="widget">
+                        <h3 class="widget-title">Newsletter</h3>
+
+                        <div id="news" method="post" action="#news">
+                            <p>
+                                <label>Email <span>*</span></label>
+
+                                <input type="text" name="wysija[user][email]" class="wysija-input validate[required,custom[email]]" title="Email" value="">
+                            </p>
+
+                            <input type="submit" value="Subscribe!">
+
+
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-lg-3 col-md-2  col-sm-6">
+                    <aside id="contact-info-widget-2" class="widget">
+                        <h3 class="widget-title">Latest Tweets</h3>
+                        <div class="tweets-box">
+                            <ul>
+                                <li><span class="status"><i class="fa fa-twitter"></i> Great choice! Apart from giving you the power to share, #GalaxyS10 comes with Ultrasonic Fingerprint Sensor, Infinity-O Display, & Pro-grade Cameras, making it the next generation phone. https://bit.ly/2H49wiJ … <a href="https://twitter.com/hashtag/galaxys10?lang=en">https://twitter.com/hashtag/galaxys10?lang=en</a></span><span class="meta"> <a href="http://twitter.com/uniquescriptz/status/1065791438783434752">02:17 AM Nov 23rd</a></span></li>
+                                <li><span class="status"><i class="fa fa-twitter"></i> The new huge-screen “iPhone XS Max” is intriguing in a big way #mobile #technology #iPhone … <a href="https://twitter.com/hashtag/iphone%20xs?f=news&vertical=default&lang=en">https://twitter.com/hashtag/iphone%20xs?f=news&vertical=default&lang=en</a></span><span class="meta"> <a href="http://twitter.com/uniquescriptz/status/1063189128492302341">09:56 PM Nov 15th</a></span></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-lg-3 col-md-3  col-sm-6">
+                    <aside id="contact-info-widget-3" class="widget">
+                        <h3 class="widget-title">Contact Us</h3>
+                        <div class="contact-info">
+                            <ul class="contact-details list list-icons">
+                                <li><i class="fa fa-map-marker"></i> <strong>Address:</strong> <span>299 Doon Valley Dr, Kitchener, ON N2G 4M4, Canada</span></li>
+                                <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <span><a href="mailto:support@onlineshop.com">support@onlineshop.com</a></span></li>
+                                <li><i class="fa fa-clock-o"></i> <strong>Working Days/Hours:</strong> <span>Mon - Sun / 10:00 AM - 6:00 PM</span></li>
+                            </ul>
+                            <p><strong>Skype ID</strong>: <a href="skype:mobileshowroom?chat">mobileshowroom</a></p>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-lg-3 col-md-3  col-sm-6">
+                    <aside id="contact-info-widget-4" class="widget">
+                        <h3 class="widget-title">Follow Us</h3>
+                        <div class="share-links">
+                            <a href="https://twitter.com/onlineshop" rel="nofollow" target="_blank" title="" class="fa fa-twitter" ></a>
+                            <a href="https://www.youtube.com/channelonlineshop" rel="nofollow" target="_blank" title="" class="fa fa-youtube"></a>
+                            <a href="skype:onlineshop?chat" rel="nofollow" target="_blank" title="" class="fa fa-skype"></a>
+                            <a href="https://plus.google.com/onlineshop" rel="nofollow" target="_blank" title="" class="fa fa-google-plus" ></a>
+                        </div>
+
+                    </aside>
+                </div>
+            </div>
+
+<%--                    <asp:Label ID="lblContactInfo" runat="server" Text="To contact us, call us at 862-555-0400 or email us at ">
+                        <asp:HyperLink ID="Email" runat="server" NavigateUrl="mailto:mobileshowroom@onlineshop.com">mobileshowroom@onlineshop.com</asp:HyperLink>
+                    </asp:Label>--%>
+
+                <%--</asp:ContentPlaceHolder>--%>
+            </footer>
+
+        </form>
+    </div>
+
+    </div>
+</body>
+</html>

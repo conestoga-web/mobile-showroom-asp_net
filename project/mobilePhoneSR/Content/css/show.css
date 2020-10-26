@@ -1,0 +1,51 @@
+﻿/*------------Chan Lim-----------------*/
+
+#sample {
+    /*margin: 4em 7em 4em 7em;*/
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em 1em 0.5em 1em;
+    text-align: center;
+    /*background-color: #C0C0C0;*/
+    background-color: #353535;
+    border: 1px solid #4A496F;
+}
+
+#sample h2 {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3.0em;
+    color: #353535;
+    text-shadow: 3px 2px 5px #666;
+    margin-bottom: 1em;
+}
+
+#sample p img {
+    width: 300px;
+    height: 600px;
+}
+
+#sample input {
+    width: 9em;
+}
+
+#introduction {
+    float: right;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em 1em 0.5em 1em;
+    text-align: left;
+    background-color: #DAD9FF;
+    width: auto;
+}
+
+#introduction h2 {
+    text-align: center;
+}
+
+#sample p #caption{
+    font-weight: bold;
+    font-size: 2.0em;
+}
